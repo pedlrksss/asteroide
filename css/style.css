@@ -1,0 +1,98 @@
+body {
+  background-color: wheat;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+canvas {
+  border: 1px solid white; 
+  background-image: url("/imagens/1.webp");
+}
+
+#title {
+  color: white;
+}
+
+#tela-inicio {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+    background-color: #000;
+
+  
+}
+
+#btn-iniciar {
+  padding: 10px 20px;
+  font-size: 18px;
+}
+
+canvas {
+  display: none; /* Inicia oculto */
+  margin: 0 auto;
+  border: 1px solid #000;
+}
+
+#fullscreen-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+
+#fullscreen-button button {
+  width: 40px;
+  height: 40px;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+@keyframes meteoro {
+  0% {
+    transform: translateX(0) translateY(0);
+  }
+  100% {
+    transform: translateX(100vw) translateY(100vh);
+  }
+}
+
+.meteoro {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-image: url(/imagens/Asteroid-PNG-Images-HD.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  animation: meteoro 5s linear infinite;
+}
+
+.meteoro:nth-child(1) {
+  top: 50px;
+  left: 100px;
+}
+
+.meteoro:nth-child(2) {
+  top: 200px;
+  left: 300px;
+}
+
+.meteoro:nth-child(3) {
+  top: 150px;
+  left: 500px;
+}
+
