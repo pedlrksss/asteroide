@@ -1,5 +1,5 @@
 body {
-  background-color: wheat;
+  background-image: url("/imagens/WhatsApp\ Image\ 2023-07-31\ at\ 15.55.27.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
@@ -36,6 +36,10 @@ canvas {
 #btn-iniciar {
   padding: 10px 20px;
   font-size: 18px;
+  background-color: rgb(249, 235, 25);
+  border: 5px solid black;
+  border-color: rgb(235, 19, 73);
+  color: #000;
 }
 
 canvas {
