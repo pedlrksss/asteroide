@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
   <link rel="stylesheet" href="css/style.css">
   <script src="js/asteroid.js" defer ></script>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1153477737550475"
@@ -11,6 +12,10 @@
 </head>
 <body>
    <canvas id="canvas" width="800" height="600"></canvas>
+
+
+
+   
   <audio id="musica" src="sound/magic space.mp3" loop autoplay></audio>
   <audio id="somTiro" src="sound/gunloop_explosion.mp3"></audio>
   
@@ -20,6 +25,19 @@
     <div class="meteoro"></div>
     <h1 id="title">Asteroid</h1>
     <button id="btn-iniciar">Iniciar</button>
+<!-- Elemento para fazer o upload da imagem da nave -->
+<div class="upload-section">
+  <label for="input-nave" class="texto">Alterar estilo da nave:
+  <input type="file" id="input-nave" accept="image/png">
+  </label>
+</div>
+
+<!-- Elemento para fazer o upload da imagem do asteroide -->
+<div class="upload-section">
+  <label for="input-asteroide" class="texto">Alterar estilo do asteroide:
+  <input type="file" id="input-asteroide" accept="image/png">
+  </label>
+</div>
   </div>
 
   <div id="fullscreen-button">

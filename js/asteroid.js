@@ -29,11 +29,46 @@ if (recorde === null) {
 }
 var teclasPressionadas = {};
 
+var inputNave = document.getElementById('input-nave');
+var inputAsteroide = document.getElementById('input-asteroide');
+
+// Event listener para o upload da imagem da nave
+inputNave.addEventListener('change', function (event) {
+  var file = event.target.files[0];
+  var reader = new FileReader();
+
+  reader.onload = function () {
+    // Definir a imagem da nave com a imagem carregada
+    naveImagem.src = reader.result;
+  };
+
+  if (file) {
+    reader.readAsDataURL(file);
+  }
+});
+
+// Event listener para o upload da imagem do asteroide
+inputAsteroide.addEventListener('change', function (event) {
+  var file = event.target.files[0];
+  var reader = new FileReader();
+
+  reader.onload = function () {
+    // Definir a imagem do asteroide com a imagem carregada
+    asteroideImagem.src = reader.result;
+  };
+
+  if (file) {
+    reader.readAsDataURL(file);
+  }
+});
+
+
 // Event listeners para capturar entrada do jogador
 document.addEventListener("keydown", keyDownHandler, false);
 document.addEventListener("keyup", keyUpHandler, false);
 canvas.addEventListener("click", reiniciarJogo, false);
 canvas.addEventListener("keydown", keyDownHandler, false);
+
 
 
 // Função para atualizar as explosões
@@ -260,15 +295,14 @@ function criarExplosão(x, y) {
 function desenhar() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-  // Desenhar a nave
+  // Desenhar a nave com a imagem personalizada
   ctx.save();
   ctx.translate(nave.x, nave.y);
-
   ctx.drawImage(naveImagem, -nave.raio, -nave.raio, nave.raio * 4, nave.raio * 4);
   ctx.restore();
 
 
-  // Desenhar os asteroides
+    // Desenhar os asteroides com a imagem personalizada
   for (var i = 0; i < asteroides.length; i++) {
     var asteroide = asteroides[i];
     ctx.drawImage(asteroideImagem, asteroide.x - asteroide.raio, asteroide.y - asteroide.raio, asteroide.raio * 2, asteroide.raio * 2);
@@ -376,6 +410,15 @@ function iniciarJogo() {
       }
     }
   }, 10);
+    redimensionarCanvas();
+  window.requestAnimationFrame(loopPrincipal);
+}
+function loopPrincipal() {
+  if (!gameOver) {
+    atualizarPosicao();
+    desenhar();
+  }
+  window.requestAnimationFrame(loopPrincipal);
 }
 
 // Manipulador de eventos para pressionamento de tecla

@@ -96,3 +96,46 @@ canvas {
   left: 500px;
 }
 
+/* Estilização para a seção de upload */
+.upload-section {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  padding-top: 20px;
+}
+
+/* Estilização para o label */
+.upload-section label {
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+/* Estilização para o input de arquivo */
+.upload-section input[type="file"] {
+  display: none;
+}
+
+/* Estilização para o label simulado */
+.upload-section label::before {
+  content: "Selecionar imagem";
+  padding: 4px 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+  color: #555;
+  cursor: pointer;
+}
+
+/* Estilização para o label simulado quando o mouse passa por cima */
+.upload-section label:hover::before {
+  background-color: #e9e9e9;
+}
+
+/* Estilização para o label simulado quando está ativo (clicado) */
+.upload-section label:active::before {
+  background-color: #ddd;
+}
+
+.texto {
+  color: white;
+}
