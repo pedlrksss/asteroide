@@ -13,6 +13,7 @@ var gameOver = false;
 var pausado = false;
 var naveImagem = new Image();
 naveImagem.src = "imagens/nave.png";
+
 var tamanhoMinimo = 10;
 var tamanhoMaximo = 30;
 var maximoAsteroides = 15;
@@ -61,6 +62,7 @@ inputAsteroide.addEventListener('change', function (event) {
     reader.readAsDataURL(file);
   }
 });
+
 
 
 // Event listeners para capturar entrada do jogador
@@ -337,6 +339,8 @@ function desenhar() {
   }
 }
 
+
+
 // Função para desenhar as explosões
 function desenharExplosoes() {
   for (var i = 0; i < explosões.length; i++) {
@@ -393,6 +397,7 @@ function iniciarJogo() {
 
   // Adiciona o evento de clique ao botão "Iniciar Jogo"
   btnIniciar.addEventListener("click", comecarJogo);
+  
 
   // Reiniciar a música
   var musica = document.getElementById("musica");
@@ -459,6 +464,34 @@ function reiniciarJogo() {
     nave.y = canvas.height / 2;
   }
 }
+
+// Função para voltar à tela inicial
+function voltarTelaInicial() {
+  // Exibir a tela de início e ocultar o canvas (ou outras partes do jogo)
+  var telaInicio = document.getElementById("tela-inicio");
+  var canvas = document.getElementById("canvas");
+  telaInicio.style.display = "block";
+  canvas.style.display = "none";
+
+  // Reseta o estado do jogo (caso queira reiniciar o jogo)
+  reiniciarJogo();
+}
+
+
+  // Armazenar as URLs das imagens originais
+  const urlNaveOriginal = "imagens/nave.png";
+  const urlAsteroideOriginal = "imagens/asteroide.png";
+
+  // Associar uma função ao botão de resetar
+  document.getElementById("btn-resetar").addEventListener("click", function() {
+    // Definir as imagens originais quando o botão for clicado
+    naveImagem.src = urlNaveOriginal;
+    asteroideImagem.src = urlAsteroideOriginal;
+
+    // Limpar a seleção dos elementos de upload
+    document.getElementById("input-nave").value = '';
+    document.getElementById("input-asteroide").value = '';
+  });
 
 // Função responsável por alternar entre os modos de tela cheia
 function toggleFullscreen() {

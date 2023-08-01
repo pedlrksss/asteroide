@@ -1,49 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <link rel="stylesheet" href="css/style.css">
-  <script src="js/asteroid.js" defer ></script>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1153477737550475"
-     crossorigin="anonymous"></script>
   <title>Asteroide</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/asteroid.js" defer></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1153477737550475" crossorigin="anonymous"></script>
 </head>
 <body>
-   <canvas id="canvas" width="800" height="600"></canvas>
 
+<div id="background-image"></div>
+  <header>
+    <h1>
+    </h1>
+  </header>
 
-
+  <canvas id="canvas" width="800" height="600"></canvas>
    
   <audio id="musica" src="sound/magic space.mp3" loop autoplay></audio>
   <audio id="somTiro" src="sound/gunloop_explosion.mp3"></audio>
-  
+  <div id="app">
   <div id="tela-inicio">
-    <div class="meteoro"></div>
-    <div class="meteoro"></div>
-    <div class="meteoro"></div>
-    <img src="imagens/asteroids_logo-removebg.png " width="800px" alt="Asteroid">
-
+    <img src="imagens/asteroids_logo-removebg.png" width="800px" alt="Asteroid">
     <button id="btn-iniciar">INICIAR</button>
-<!-- Elemento para fazer o upload da imagem da nave -->
+
+  <!-- Elemento para fazer o upload da imagem da nave -->
 <div class="upload-section">
-  <label for="input-nave" class="texto">Alterar estilo da nave:
+  <label for="input-nave" class="texto">Alterar estilo da nave:</label>
   <input type="file" id="input-nave" accept="image/png">
-  </label>
 </div>
 
 <!-- Elemento para fazer o upload da imagem do asteroide -->
 <div class="upload-section">
-  <label for="input-asteroide" class="texto">Alterar estilo do asteroide:
+  <label for="input-asteroide" class="texto">Alterar estilo do asteroide:</label>
   <input type="file" id="input-asteroide" accept="image/png">
-  </label>
 </div>
-  </div>
+
+</div>
+</div>
+<!-- Botão de reset -->
+<button id="btn-resetar">Resetar imagens</button>
 
   <div id="fullscreen-button">
     <button onclick="toggleFullscreen()">Tela Cheia</button>
   </div>
+  
+  <div id="voltar">
+  <button id="btn-voltar" type="button" onclick="voltarTelaInicial()">Tela Inicial</button>
+  </div>
+ 
 
+ 
 </body>
 </html>
