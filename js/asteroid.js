@@ -348,6 +348,7 @@ function desenharExplosoes() {
     ctx.drawImage(explosaoImagem, explosão.x - explosão.tamanho, explosão.y - explosão.tamanho, explosão.tamanho * 2, explosão.tamanho * 2);
   }
 }
+
 // Função para entrar no modo de tela cheia
 function enterFullscreen(element) {
   if (element.requestFullscreen) {
@@ -418,6 +419,7 @@ function iniciarJogo() {
     redimensionarCanvas();
   window.requestAnimationFrame(loopPrincipal);
 }
+
 function loopPrincipal() {
   if (!gameOver) {
     atualizarPosicao();
